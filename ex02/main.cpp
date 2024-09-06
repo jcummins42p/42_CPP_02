@@ -6,7 +6,7 @@
 /*   By: jcummins <jcummins@student.42prague.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 17:43:42 by jcummins          #+#    #+#             */
-/*   Updated: 2024/09/05 19:42:35 by jcummins         ###   ########.fr       */
+/*   Updated: 2024/09/06 14:14:48 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,19 @@ void	test_minmax(const Fixed &f1, const Fixed &f2)
 int main( void )
 {
 	Fixed a;
-	Fixed const b( 10.0f );
-	Fixed const c( 42.42f );
-	Fixed const d( b );
+	Fixed b( 10.0f );
+	Fixed c( 42.42f );
+	Fixed d( b );
 
 	a = Fixed( 1234.4321f );
 
+
+	std::cout 	<< "a is " << a
+				//<< " with raw bits " << a.getRawBits()
+				<< std::endl;
+	a++;
+	a++;
+	a++;
 	std::cout 	<< "a is " << a
 				//<< " with raw bits " << a.getRawBits()
 				<< std::endl;
@@ -68,7 +75,6 @@ int main( void )
 	test_comparison_operators(a, a);
 	test_arithmetic_operators(a, b);
 	test_minmax(a, b);
-
 	std::cout << "max is" << Fixed::min(a, a) << std::endl;
 
 	return (0);

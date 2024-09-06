@@ -6,7 +6,7 @@
 /*   By: jcummins <jcummins@student.42prague.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 19:48:36 by jcummins          #+#    #+#             */
-/*   Updated: 2024/09/05 20:07:10 by jcummins         ###   ########.fr       */
+/*   Updated: 2024/09/06 13:52:03 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,26 +17,35 @@
 Point::Point( void ) :
 	_x(0),
 	_y(0) {
-	std::cout << "point created with default 0, 0 values" << std::endl;
+	std::cout << "Point created with default 0, 0 values" << std::endl;
+}
+
+Point::Point( const float x, const float y ) :
+	_x(x),
+	_y(y) {
+	std::cout 	<< "Point created with new "
+				<< _x << ", " << _y << " values" << std::endl;
 }
 
 Point::Point( const Point &point ) :
 	_x(point._x),
 	_y(point._y) {
-	std::cout 	<< "point created with copied "
+	std::cout 	<< "Point created with copied "
 				<< _x << ", " << _y << " values" << std::endl;
 }
 
-Point &Point::operator=( const Point &point )
-{
-	if (this != &point)
-	{
-		_x = point._x;
-		_y = point._y;
-	}
-	return (*this);
-}
+//	Cannot make a copy assignment constructor because fixed are defined as const
+//	const values must be set a t initialization and cannot be copied
+//Point &Point::operator=( const Point &point )
+//{
+	//if (this != &point)
+	//{
+		//_x = point._x;
+		//_y = point._y;
+	//}
+	//return (*this);
+//}
 
 Point::~Point( void ) {
-	std::cout << "point destroyed" << std::endl;
+	std::cout << "Point destroyed" << std::endl;
 }

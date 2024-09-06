@@ -6,7 +6,7 @@
 /*   By: jcummins <jcummins@student.42prague.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 17:43:42 by jcummins          #+#    #+#             */
-/*   Updated: 2024/09/05 19:55:45 by jcummins         ###   ########.fr       */
+/*   Updated: 2024/09/06 13:53:38 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,9 @@
 
 int main( void )
 {
-	Fixed a;
-	Fixed const b( 10.0f );
-	Fixed const c( 42.42f );
-	Fixed const d( b );
+	Point a;
+	Point b(a);
+	Point c(411.25f, -122.125f);
 
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: jcummins <jcummins@student.42prague.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 17:43:14 by jcummins          #+#    #+#             */
-/*   Updated: 2024/09/05 19:42:24 by jcummins         ###   ########.fr       */
+/*   Updated: 2024/09/06 14:15:51 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,3 +139,24 @@ Fixed	Fixed::operator/( const Fixed &other ) const {
 	return (output);
 }
 
+Fixed	&Fixed::operator++( void ) {
+	_rawbits += 1;
+	return *this;
+}
+
+Fixed	Fixed::operator++( int ) {
+	Fixed	temp = *this;
+	_rawbits += 1;
+	return temp;
+}
+
+Fixed	&Fixed::operator--( void ) {
+	_rawbits -= 1;
+	return *this;
+}
+
+Fixed	Fixed::operator--( int ) {
+	Fixed	temp = *this;
+	_rawbits -= 1;
+	return temp;
+}

@@ -6,7 +6,7 @@
 /*   By: jcummins <jcummins@student.42prague.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 17:43:14 by jcummins          #+#    #+#             */
-/*   Updated: 2024/09/05 20:03:56 by jcummins         ###   ########.fr       */
+/*   Updated: 2024/09/06 13:54:53 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,29 +17,29 @@
 Fixed::Fixed( void ) :
 	_rawbits(0)
 {
-	std::cout << "Default constructor called" << std::endl;
+	//std::cout << "Fixed default constructor called" << std::endl;
 }
 
 Fixed::Fixed( int raw ) :
 	_rawbits(raw * (1 << _fraction))
 {
-	std::cout << "Default integer constructor called" << std::endl;
+	//std::cout << "Fixed default integer constructor called" << std::endl;
 }
 
 Fixed::Fixed( float raw )
 {
 	_rawbits = roundf(raw * (1 << _fraction));
-	std::cout << "Default float constructor called" << std::endl;
+	//std::cout << "Fixed default float constructor called" << std::endl;
 }
 
 Fixed::Fixed( const Fixed& fixed ) :
 	_rawbits(fixed._rawbits)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	//std::cout << "Fixed copy constructor called" << std::endl;
 }
 
 Fixed &Fixed::operator=( const Fixed& fixed ) {
-	std::cout << "Copy assign constructor called" << std::endl;
+	//std::cout << "Fixed copy assign constructor called" << std::endl;
 	if (this != &fixed)
 	{
 		_rawbits = fixed.getRawBits();
@@ -48,7 +48,7 @@ Fixed &Fixed::operator=( const Fixed& fixed ) {
 }
 
 Fixed::~Fixed( void ) {
-	std::cout << "Destructor called" << std::endl;
+	//std::cout << "Fixed destructor called" << std::endl;
 }
 
 int		Fixed::toInt( void ) const {
