@@ -6,7 +6,7 @@
 /*   By: jcummins <jcummins@student.42prague.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 17:44:19 by jcummins          #+#    #+#             */
-/*   Updated: 2024/09/06 14:06:33 by jcummins         ###   ########.fr       */
+/*   Updated: 2024/09/06 14:47:48 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ class	Fixed
 {
 	public:
 		Fixed	( void );
-		Fixed	( const int raw );
-		Fixed	( const float raw );
+		Fixed	( const int num );
+		Fixed	( const float num );
 		Fixed	( const Fixed &fixed );
 		Fixed	&operator=( const Fixed &fixed );
 		~Fixed	( void );
