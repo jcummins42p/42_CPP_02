@@ -6,7 +6,7 @@
 /*   By: jcummins <jcummins@student.42prague.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 17:43:14 by jcummins          #+#    #+#             */
-/*   Updated: 2024/09/06 13:54:53 by jcummins         ###   ########.fr       */
+/*   Updated: 2024/09/06 14:44:34 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,29 +17,29 @@
 Fixed::Fixed( void ) :
 	_rawbits(0)
 {
-	//std::cout << "Fixed default constructor called" << std::endl;
+	//std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed( int raw ) :
 	_rawbits(raw * (1 << _fraction))
 {
-	//std::cout << "Fixed default integer constructor called" << std::endl;
+	//std::cout << "Default integer constructor called" << std::endl;
 }
 
 Fixed::Fixed( float raw )
 {
 	_rawbits = roundf(raw * (1 << _fraction));
-	//std::cout << "Fixed default float constructor called" << std::endl;
+	//std::cout << "Default float constructor called" << std::endl;
 }
 
 Fixed::Fixed( const Fixed& fixed ) :
 	_rawbits(fixed._rawbits)
 {
-	//std::cout << "Fixed copy constructor called" << std::endl;
+	//std::cout << "Copy constructor called" << std::endl;
 }
 
 Fixed &Fixed::operator=( const Fixed& fixed ) {
-	//std::cout << "Fixed copy assign constructor called" << std::endl;
+	//std::cout << "Copy assign constructor called" << std::endl;
 	if (this != &fixed)
 	{
 		_rawbits = fixed.getRawBits();
@@ -48,7 +48,7 @@ Fixed &Fixed::operator=( const Fixed& fixed ) {
 }
 
 Fixed::~Fixed( void ) {
-	//std::cout << "Fixed destructor called" << std::endl;
+	//std::cout << "Destructor called" << std::endl;
 }
 
 int		Fixed::toInt( void ) const {
@@ -98,22 +98,18 @@ bool	Fixed::operator!=( const Fixed& other) const {
 }
 
 const Fixed	&Fixed::max( const Fixed &f1, const Fixed &f2 ) {
-	std::cout << ", using const min function, ";
 	return (f1 > f2) ? f1 : f2;
 }
 
 const Fixed	&Fixed::min( const Fixed &f1, const Fixed &f2 ) {
-	std::cout << ", using const max function, ";
 	return (f1 < f2) ? f1 : f2;
 }
 
 Fixed	&Fixed::max( Fixed &f1, Fixed &f2 ) {
-	std::cout << ", using non-const max function, ";
 	return (f1 > f2) ? f1 : f2;
 }
 
 Fixed	&Fixed::min( Fixed &f1, Fixed &f2 ) {
-	std::cout << ", using non-const min function, ";
 	return (f1 < f2) ? f1 : f2;
 }
 
@@ -139,3 +135,24 @@ Fixed	Fixed::operator/( const Fixed &other ) const {
 	return (output);
 }
 
+Fixed	&Fixed::operator++( void ) {
+	_rawbits += 1;
+	return *this;
+}
+
+Fixed	Fixed::operator++( int ) {
+	Fixed	temp = *this;
+	_rawbits += 1;
+	return temp;
+}
+
+Fixed	&Fixed::operator--( void ) {
+	_rawbits -= 1;
+	return *this;
+}
+
+Fixed	Fixed::operator--( int ) {
+	Fixed	temp = *this;
+	_rawbits -= 1;
+	return temp;
+}

@@ -6,7 +6,7 @@
 /*   By: jcummins <jcummins@student.42prague.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 17:44:19 by jcummins          #+#    #+#             */
-/*   Updated: 2024/09/05 20:08:34 by jcummins         ###   ########.fr       */
+/*   Updated: 2024/09/06 14:06:33 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,11 @@ class	Fixed
 		Fixed	operator-(const Fixed &other) const;
 		Fixed	operator*(const Fixed &other) const;
 		Fixed	operator/(const Fixed &other) const;
+
+		Fixed	&operator++( void );	// pre-increment returns reference to
+		Fixed	&operator--( void );	//	the modified object
+		Fixed	operator++( int );		// post operators return the original
+		Fixed	operator--( int );		// value then affect the number
 
 		static const Fixed	&max( const Fixed &f1, const Fixed &f2 );
 		static const Fixed	&min( const Fixed &f1, const Fixed &f2 );
