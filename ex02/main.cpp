@@ -6,7 +6,7 @@
 /*   By: jcummins <jcummins@student.42prague.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 17:43:42 by jcummins          #+#    #+#             */
-/*   Updated: 2024/09/06 14:42:19 by jcummins         ###   ########.fr       */
+/*   Updated: 2024/09/09 20:14:07 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ int main( void )
 	Fixed c( 42.42f );
 	Fixed d( b );
 
-	a = Fixed( 1234.4321f );
+	a = Fixed( 1234.0125f );
 
 	test_show_fl(a, b, c, d);
 	test_show_int(a, b, c, d);

@@ -6,7 +6,7 @@
 /*   By: jcummins <jcummins@student.42prague.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 17:43:14 by jcummins          #+#    #+#             */
-/*   Updated: 2024/09/06 15:06:34 by jcummins         ###   ########.fr       */
+/*   Updated: 2024/09/09 21:50:16 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,12 +108,14 @@ Fixed	Fixed::operator-( const Fixed &other ) const {
 }
 
 Fixed	Fixed::operator*( const Fixed &other ) const {
-	Fixed	output(this->toFloat() * other.toFloat());
+	Fixed	output;
+	output.setRawBits((this->_rawbits * other._rawbits) >> _fraction);
 	return (output);
 }
 
 Fixed	Fixed::operator/( const Fixed &other ) const {
-	Fixed	output(this->toFloat() / other.toFloat());
+	Fixed	output;
+	output.setRawBits((this->_rawbits << _fraction) / other._rawbits);
 	return (output);
 }
 
