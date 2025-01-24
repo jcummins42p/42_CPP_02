@@ -6,7 +6,7 @@
 /*   By: jcummins <jcummins@student.42prague.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 17:43:14 by jcummins          #+#    #+#             */
-/*   Updated: 2024/09/09 21:50:16 by jcummins         ###   ########.fr       */
+/*   Updated: 2025/01/24 14:45:13 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,27 +56,27 @@ std::ostream &operator<<( std::ostream &os, const Fixed& fixed ) {
 }
 
 bool	Fixed::operator>( const Fixed& other) const {
-	return this->toFloat() > other.toFloat();
+	return this->_rawbits > other._rawbits;
 }
 
 bool	Fixed::operator<( const Fixed& other) const {
-	return this->toFloat() < other.toFloat();
+	return this->_rawbits < other._rawbits;
 }
 
 bool	Fixed::operator>=( const Fixed& other) const {
-	return this->toFloat() >= other.toFloat();
+	return this->_rawbits >= other._rawbits;
 }
 
 bool	Fixed::operator<=( const Fixed& other) const {
-	return this->toFloat() <= other.toFloat();
+	return this->_rawbits <= other._rawbits;
 }
 
 bool	Fixed::operator==( const Fixed& other) const {
-	return this->toFloat() == other.toFloat();
+	return this->_rawbits == other._rawbits;
 }
 
 bool	Fixed::operator!=( const Fixed& other) const {
-	return this->toFloat() != other.toFloat();
+	return this->_rawbits != other._rawbits;
 }
 
 const Fixed	&Fixed::max( const Fixed &f1, const Fixed &f2 ) {

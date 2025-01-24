@@ -6,7 +6,7 @@
 /*   By: jcummins <jcummins@student.42prague.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 17:43:14 by jcummins          #+#    #+#             */
-/*   Updated: 2024/09/09 21:45:15 by jcummins         ###   ########.fr       */
+/*   Updated: 2025/01/24 14:43:19 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,7 @@ Fixed::Fixed( const Fixed& fixed ) :
 
 Fixed &Fixed::operator=( const Fixed& fixed ) {
 	//std::cout << "Copy assign constructor called" << std::endl;
-	if (this != &fixed)
-	{
+	if (this != &fixed) {
 		_rawbits = fixed.getRawBits();
 	}
 	return *this;
@@ -74,27 +73,27 @@ std::ostream &operator<<( std::ostream &os, const Fixed& fixed ) {
 }
 
 bool	Fixed::operator>( const Fixed& other) const {
-	return this->toFloat() > other.toFloat();
+	return (this->_rawbits > other._rawbits);
 }
 
 bool	Fixed::operator<( const Fixed& other) const {
-	return this->toFloat() < other.toFloat();
+	return (this->_rawbits < other._rawbits);
 }
 
 bool	Fixed::operator>=( const Fixed& other) const {
-	return this->toFloat() >= other.toFloat();
+	return (this->_rawbits >= other._rawbits);
 }
 
 bool	Fixed::operator<=( const Fixed& other) const {
-	return this->toFloat() <= other.toFloat();
+	return (this->_rawbits <= other._rawbits);
 }
 
 bool	Fixed::operator==( const Fixed& other) const {
-	return this->toFloat() == other.toFloat();
+	return (this->_rawbits == other._rawbits);
 }
 
 bool	Fixed::operator!=( const Fixed& other) const {
-	return this->toFloat() != other.toFloat();
+	return (this->_rawbits != other._rawbits);
 }
 
 const Fixed	&Fixed::max( const Fixed &f1, const Fixed &f2 ) {

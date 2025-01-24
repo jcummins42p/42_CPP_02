@@ -6,7 +6,7 @@
 /*   By: jcummins <jcummins@student.42prague.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 17:43:42 by jcummins          #+#    #+#             */
-/*   Updated: 2024/09/06 15:38:00 by jcummins         ###   ########.fr       */
+/*   Updated: 2025/01/24 14:45:27 by jcummins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main( void )
 	Point b(0, 10);
 	Point c(10, 0);
 
-	Point test(9.9f, 0);
+	Point test(10.9f, 0);
 	if (bsp(a, b, c, test))
 		std::cout << "Bsp indicates the point is within the triangle.\n";
 	else
